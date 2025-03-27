@@ -1,0 +1,232 @@
+---
+title: "The Infected Checkerboard"
+author: David Radcliffe
+format: revealjs
+---
+
+## The infected checkerboard
+
+* An infection spreads among the squares of an $n \times n$ board.
+* If a square has two or more infected neighbors, it becomes infected itself.
+* How many squares are needed to infect the entire board?
+
+![](figs/fig-01-01.png){height=300 fig-align="center"}
+
+## The infected checkerboard
+
+* An infection spreads among the squares of an $n \times n$ board.
+* If a square has two or more infected neighbors, it becomes infected itself.
+* How many squares are needed to infect the entire board?
+
+![](figs/fig-01-02.png){height=300 fig-align="center"}
+
+## The infected checkerboard
+
+* An infection spreads among the squares of an $n \times n$ board.
+* If a square has two or more infected neighbors, it becomes infected itself.
+* How many squares are needed to infect the entire board?
+
+![](figs/fig-01-03.png){height=300 fig-align="center"}
+
+## The infected checkerboard
+
+* An infection spreads among the squares of an $n \times n$ board.
+* If a square has two or more infected neighbors, it becomes infected itself.
+* How many squares are needed to infect the entire board?
+
+![](figs/fig-01-04.png){height=300 fig-align="center"}
+
+## The infected checkerboard
+
+* An infection spreads among the squares of an $n \times n$ board.
+* If a square has two or more infected neighbors, it becomes infected itself.
+* How many squares are needed to infect the entire board?
+
+![](figs/fig-01-05.png){height=300 fig-align="center"}
+
+## The infected checkerboard
+
+* An infection spreads among the squares of an $n \times n$ board.
+* If a square has two or more infected neighbors, it becomes infected itself.
+* How many squares are needed to infect the entire board?
+
+![](figs/fig-01-06.png){height=300 fig-align="center"}
+
+## Infecting a 4 × 4 board
+
+![](figs/fig-02-01.png){height=400 fig-align="center"}
+
+
+## Infecting a 4 × 4 board
+
+![](figs/fig-02-02.png){height=400 fig-align="center"}
+
+
+## Infecting a 4 × 4 board
+
+![](figs/fig-02-03.png){height=400 fig-align="center"}
+
+
+## Infecting a 4 × 4 board
+
+![](figs/fig-02-04.png){height=400 fig-align="center"}
+
+
+## Infecting a 4 × 4 board
+
+![](figs/fig-02-05.png){height=400 fig-align="center"}
+
+Four squares suffice to infect the entire board.
+
+. . .
+
+But can we do it with only three squares?
+
+## One word: PERIMETER!
+
+* Consider the perimeter of the infected regions.
+* Square infected by 2 neighbors $\implies$ perimeter unchanged.
+* Square infected by $> 2$ neighbors $\implies$ perimeter decreases.
+
+![](figs/fig-03-01.png){height=200}
+![](figs/fig-03-02.png){height=200}
+![](figs/fig-03-03.png){height=200}
+
+* So the perimeter never increases! (It's a *monovariant*.)
+
+## But...
+
+* The perimeter of the entire $n \times n$ board is $4n$.
+* If fewer than $n$ squares are infected, then the perimeter
+of the infected region is less than $4n$.
+* Therefore, the $n \times n$ board cannot be infected by
+fewer than $n$ squares.
+
+![](figs/fig-04-01.png){height=300 fig-align="center"}
+
+## Variation on a theme
+
+Suppose that a square needs three infected neighbors
+to become infected.
+
+What is the smallest number of infected cells that can
+infect an $m \times n$ board?
+
+![](figs/fig-05-01.png){height=400 fig-align="center"}
+
+## Variation on a theme
+
+Suppose that a square needs three infected neighbors
+to become infected.
+
+What is the smallest number of infected cells that can
+infect an $m \times n$ board?
+
+![](figs/fig-05-02.png){height=400 fig-align="center"}
+
+## Variation on a theme
+
+Suppose that a square needs three infected neighbors
+to become infected.
+
+What is the smallest number of infected cells that can
+infect an $m \times n$ board?
+
+![](figs/fig-05-03.png){height=400 fig-align="center"}
+
+## Variation on a theme
+
+Suppose that a square needs three infected neighbors
+to become infected.
+
+What is the smallest number of infected cells that can
+infect an $m \times n$ board?
+
+![](figs/fig-05-04.png){height=400 fig-align="center"}
+
+## Variation on a theme
+
+Suppose that a square needs three infected neighbors
+to become infected.
+
+What is the smallest number of infected cells that can
+infect an $m \times n$ board?
+
+![](figs/fig-05-05.png){height=400 fig-align="center"}
+
+## Variation on a theme
+
+Suppose that a square needs three infected neighbors
+to become infected.
+
+What is the smallest number of infected cells that can
+infect an $m \times n$ board?
+
+![](figs/fig-05-06.png){height=400 fig-align="center"}
+
+## Variation on a theme
+
+Suppose that a square needs three infected neighbors
+to become infected.
+
+What is the smallest number of infected cells that can
+infect an $m \times n$ board?
+
+![](figs/fig-05-07.png){height=400 fig-align="center"}
+
+## An invariant
+
+* Let $s = \#$  of infected squares
+
+* Let $a = \#$ of pairs of adjacent squares
+
+* Let $b = \#$ of uninfected regions that
+are surrounded by infected squares
+
+![](figs/fig-06-01.png){height=400 fig-align="center"}
+
+
+## An invariant
+
+* When a square is infected by three of its neighbors,
+  $a$ increases by 3, but $b$ does not change.
+* When a square is infected by four of its neighbors,
+  $a$ increases by 4, and $b$ decreases by 1.
+* In both cases, the quantity $J \equiv 3s - a - b$ does not change.
+
+![](figs/fig-07-01.png){height=400 fig-align="center"}
+
+## Lower bound
+
+Suppose that an initial infection of $s_0$ squares
+spreads to the entire $m \times n$ board.
+
+* $s$ increases from $s_0$ to $mn$.
+
+* $a$ increases from $a_0$ to $m(n-1) + (m-1)n$.
+
+* $b$ decreases from $b_0$ to 0, or remains at 0.
+
+Therefore,
+$$
+\begin{align*}
+J &= 3s_0 - a_0 - b_0 = mn + m + n \\
+&\implies s_0 \ge \frac{mn + n + n}{3}, \\
+& \text{with equality when } a_0 = b_0 = 0.
+\end{align*}
+$$
+
+## Pandemic formula
+
+Suppose that an initial set of $s$ squares
+will infect an $m \times n$ grid. Then
+
+$$s = \frac13 (mn + m + n + a + c),$$
+
+where
+
+* $a$ is the number of adjacent pairs of infected squares, and
+* $b$ is the number of uninfected regions that are surrounded
+on all sides by infected squares.
+
+

@@ -1,0 +1,133 @@
+---
+title: "The Infected Checkerboard"
+author: David Radcliffe
+format: 
+  revealjs:
+    theme: beige
+---
+
+## The infected checkerboard
+
+The following problem is from Mathematical Puzzles: A Connoisseur’s Collection by Peter Winkler.
+
+
+> An infection spreads among the squares of an n × n checkerboard in the following manner. If a square has two or more infected neighbors, it becomes infected itself. Prove that you cannot infect the whole board if you begin with fewer than n infected squares.
+
+
+## n squares are sufficient
+
+You can infect the whole board if you begin with $n$ infected squares.  (Why?)
+
+. . .
+
+![](figs/fig-02-01.png){height=500 fig-align="center"}
+
+## n squares are sufficient
+
+You can infect the whole board if you begin with $n$ infected squares.  (Why?)
+
+![](figs/fig-02-02.png){height=500 fig-align="center"}
+
+## n squares are sufficient
+
+You can infect the whole board if you begin with $n$ infected squares.  (Why?)
+
+![](figs/fig-02-03.png){height=500 fig-align="center"}
+
+## n squares are sufficient
+
+You can infect the whole board if you begin with $n$ infected squares.  (Why?)
+
+![](figs/fig-02-04.png){height=500 fig-align="center"}
+
+## n squares are sufficient
+
+You can infect the whole board if you begin with $n$ infected squares.  (Why?)
+
+![](figs/fig-02-05.png){height=500 fig-align="center"}
+
+## n squares are necessary
+
+You cannot infect the whole board if you begin with fewer than
+$n$ infected squares. (Why not?)
+
+. . .
+
+*Hint: Consider the perimeter of the infected region.*
+
+. . .
+
+* If there are fewer than $n$ infected squares, the 
+perimeter of the infected region is less than the perimeter
+of the whole board.
+
+. . .
+
+* When a new square is infected, the perimeter of the infected
+region decreases or stays the same.
+
+. . .
+
+* So the infected region can never cover the entire board.
+
+
+## Bootstrap percolation
+
+* This process is called *2-neighbor bootstrap percolation*.
+
+* It's an example of a cellular automaton.
+
+* The process can be defined on any undirected graph.
+
+**NEW QUESTION**
+
+Suppose that a square needs three or more infected
+neighbors to become infected itself. What is the minimum
+number of squares that must be initially infected in order
+to infect an $m \times n$ grid?
+
+## The pandemic formula
+
+Suppose that an initial set of $s$ squares
+will infect an $m \times n$ grid. Then
+
+$$s = \frac{mn + m + n + a + c}{3}$$
+
+where
+
+* $a$ is the number of adjacent pairs of infected squares, and
+* $c$ is the number of "islands" of uninfected squares.
+
+## Perfect initial sets
+
+Suppose that an initial set of $s$ squares will infect an
+$m \times n$ grid. Then
+
+$$s \ge \frac{mn + m + n}{3}.$$
+
+If
+$$\displaystyle s = \frac{mn + m + n}{3}$$
+then we say that the initial set is **perfect**.
+
+## Infinite family of perfect initial sets
+
+![](figs/fig-08-01.png){height=200}
+![](figs/fig-08-02.png){height=200}
+![](figs/fig-08-03.png){height=200}
+
+![](figs/fig-08-04.png){height=200}
+![](figs/fig-08-05.png){height=200}
+![](figs/fig-08-06.png){height=200}
+
+## Main results
+
+* The only perfect initial sets are the infinite families
+described previously.
+
+* If $m, n \ge 4$, the minimum number of squares $s$
+needed to infect an $m \times n$ grid satisfies
+
+$$ \frac{mn + m + n}{3} \le s \le 
+\frac{mn + m + n + 6}{3}.$$
+
+* In most cases I have found exact lower bounds.
